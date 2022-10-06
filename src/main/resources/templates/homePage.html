@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MyAssetPortfolio</title>
+</head>
+<body>
+<h1>MyAssetPortfolio</h1>
+<p>Find your favorite stocks</p>
+<form action="/home" method="get">
+    <label for="ticker">Stock ticker</label>
+    <input type="text" id="ticker" name="ticker" placeholder="e.g. TWTR"><br><br>
+    <input type="submit" value="Search">
+    <input type="button" value="Save in my bag@@@">
+</form>
+<p th:text="'ticker' + ${ticker}"></p>
+</body>
+</html>
