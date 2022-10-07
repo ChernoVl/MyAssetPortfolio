@@ -1,0 +1,13 @@
+server:
+  port: 8080
+#  port=0 - random port
+  servlet:
+#    context-path: /homepath
+
+#debug: true
+
+spring:
+  thymeleaf:
+    cache: false
+#    prefix: classpath:/templates/
+#    prefix: file:src/main/resources/templates/
