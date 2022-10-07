@@ -1,7 +1,7 @@
 server:
   port: 8080
 #  port=0 - random port
-  servlet:
+#  servlet:
 #    context-path: /homepath
 
 #debug: true
@@ -11,3 +11,15 @@ spring:
     cache: false
 #    prefix: classpath:/templates/
 #    prefix: file:src/main/resources/templates/
+
+  datasource:
+    url: jdbc:h2:file:./data/myDB
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
