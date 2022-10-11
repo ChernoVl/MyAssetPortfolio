@@ -3,10 +3,7 @@ package com.stocks.project.myassetportfolio.model.entity;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -18,6 +15,7 @@ import java.math.BigDecimal;
 @Component
 public class Price {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private BigDecimal brutto;
     private BigDecimal stockPurchasePrice;

@@ -3,11 +3,10 @@ package com.stocks.project.myassetportfolio.model.entity;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -18,10 +17,13 @@ import java.time.Instant;
 @Component
 @Table(name="STOCK")
 public class StockWrapper {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String fullName;
     private String ticker;
     private BigDecimal currPrice;
     private Instant updatedDate;
+
 }

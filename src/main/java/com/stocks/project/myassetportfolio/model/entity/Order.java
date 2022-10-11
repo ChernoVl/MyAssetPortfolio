@@ -3,10 +3,7 @@ package com.stocks.project.myassetportfolio.model.entity;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
@@ -18,6 +15,7 @@ import java.time.Instant;
 @Component
 public class Order {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double amount;
     private Instant buyingDate;

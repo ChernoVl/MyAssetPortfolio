@@ -1,11 +1,11 @@
--- DROP TABLE IF EXISTS "ORDER";
--- DROP TABLE IF EXISTS PRICE;
--- DROP TABLE IF EXISTS STOCK_WRAPPER;
--- DROP TABLE IF EXISTS DILLER;
+DROP TABLE IF EXISTS "ORDER";
+DROP TABLE IF EXISTS PRICE;
+DROP TABLE IF EXISTS STOCK;
+DROP TABLE IF EXISTS DILLER;
 
 CREATE TABLE DILLER
 (
-    id         BIGINT NOT NULL,
+    id         BIGINT AUTO_INCREMENT NOT NULL,
     name       VARCHAR(255),
     commission DECIMAL,
     CONSTRAINT pk_diller PRIMARY KEY (id)
@@ -13,7 +13,7 @@ CREATE TABLE DILLER
 
 CREATE TABLE STOCK
 (
-    id           BIGINT NOT NULL,
+    id           BIGINT AUTO_INCREMENT NOT NULL,
     full_name    VARCHAR(255),
     ticker       VARCHAR(255),
     curr_price   DECIMAL,
@@ -23,7 +23,7 @@ CREATE TABLE STOCK
 
 CREATE TABLE PRICE
 (
-    id                   BIGINT NOT NULL,
+    id                   BIGINT AUTO_INCREMENT NOT NULL,
     brutto               DECIMAL,
     stock_purchase_price DECIMAL,
     stock_wrapper_id     BIGINT,
@@ -34,7 +34,7 @@ CREATE TABLE PRICE
 
 CREATE TABLE "ORDER"
 (
-    id          BIGINT NOT NULL,
+    id          BIGINT AUTO_INCREMENT NOT NULL,
     amount      DOUBLE,
     buying_date TIMESTAMP,
     price_id    BIGINT,
