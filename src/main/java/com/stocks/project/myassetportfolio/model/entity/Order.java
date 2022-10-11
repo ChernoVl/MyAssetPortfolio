@@ -7,9 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.Instant;
 
 @Entity
 @Getter
@@ -22,7 +20,7 @@ public class Order {
     @Id
     private Long id;
     private Double amount;
-    private LocalDateTime buyingDate;
+    private Instant buyingDate;
 
     @OneToOne(orphanRemoval = true)
     @JoinColumn(name = "price_id")
