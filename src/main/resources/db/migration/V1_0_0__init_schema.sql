@@ -7,7 +7,7 @@ CREATE TABLE DILLER
 (
     id         BIGINT AUTO_INCREMENT NOT NULL,
     name       VARCHAR(255),
-    commission DECIMAL(20,4),
+    commission DECIMAL(20, 4),
     CONSTRAINT pk_diller PRIMARY KEY (id)
 );
 
@@ -16,16 +16,16 @@ CREATE TABLE STOCK
     id           BIGINT AUTO_INCREMENT NOT NULL,
     full_name    VARCHAR(255),
     ticker       VARCHAR(255),
-    curr_price   DECIMAL(20,4),
-    updated_date TIMESTAMP,
+    curr_price   DECIMAL(20, 4),
+    updated_date TIMESTAMP WITH TIME ZONE,
     CONSTRAINT pk_stockwrapper PRIMARY KEY (id)
 );
 
 CREATE TABLE PRICE
 (
     id                   BIGINT AUTO_INCREMENT NOT NULL,
-    brutto               DECIMAL(20,4),
-    stock_purchase_price DECIMAL(20,4),
+    brutto               DECIMAL(20, 4),
+    stock_purchase_price DECIMAL(20, 4),
     stock_wrapper_id     BIGINT,
     diller_id            BIGINT,
     CONSTRAINT pk_price PRIMARY KEY (id)
@@ -36,7 +36,7 @@ CREATE TABLE "ORDER"
 (
     id          BIGINT AUTO_INCREMENT NOT NULL,
     amount      DOUBLE,
-    buying_date TIMESTAMP,
+    buying_date TIMESTAMP WITH TIME ZONE,
     price_id    BIGINT,
     CONSTRAINT pk_order PRIMARY KEY (id)
 );
