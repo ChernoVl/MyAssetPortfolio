@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -24,6 +23,6 @@ public class StockWrapper {
     private String fullName;
     private String ticker;
     private BigDecimal currPrice;
-    private Instant updatedDate;
+    private final Instant updatedDate = Instant.now();
 
 }
