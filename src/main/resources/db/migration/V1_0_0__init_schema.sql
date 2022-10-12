@@ -7,7 +7,7 @@ CREATE TABLE DILLER
 (
     id         BIGINT AUTO_INCREMENT NOT NULL,
     name       VARCHAR(255),
-    commission DECIMAL,
+    commission DECIMAL(20,4),
     CONSTRAINT pk_diller PRIMARY KEY (id)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE STOCK
     id           BIGINT AUTO_INCREMENT NOT NULL,
     full_name    VARCHAR(255),
     ticker       VARCHAR(255),
-    curr_price   DECIMAL,
+    curr_price   DECIMAL(20,4),
     updated_date TIMESTAMP,
     CONSTRAINT pk_stockwrapper PRIMARY KEY (id)
 );
@@ -24,8 +24,8 @@ CREATE TABLE STOCK
 CREATE TABLE PRICE
 (
     id                   BIGINT AUTO_INCREMENT NOT NULL,
-    brutto               DECIMAL,
-    stock_purchase_price DECIMAL,
+    brutto               DECIMAL(20,4),
+    stock_purchase_price DECIMAL(20,4),
     stock_wrapper_id     BIGINT,
     diller_id            BIGINT,
     CONSTRAINT pk_price PRIMARY KEY (id)
