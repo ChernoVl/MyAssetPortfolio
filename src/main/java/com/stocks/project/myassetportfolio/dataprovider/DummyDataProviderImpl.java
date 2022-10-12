@@ -18,8 +18,8 @@ public class DummyDataProviderImpl implements DataProvider {
 
     private StockDto buildDto(int i) {
         return StockDto.builder()
-                .fullName("stock number " + i)
-                .ticker("ticker: " + i * 2)
+                .fullName("Name is " + i)
+                .ticker("TICKER: " + i * 2)
                 .currPrice(BigDecimal.valueOf((i * 100. - 54.) / 100.))
                 .build();
     }
