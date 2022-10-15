@@ -13,14 +13,15 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 @Component
-public class Order {
+@Table(name="ORDER")
+public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double amount;
     private Instant buyingDate;
 
-    @OneToOne(orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name = "price_id")
     private Price price;
 

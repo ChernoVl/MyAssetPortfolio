@@ -15,7 +15,7 @@ import java.time.Instant;
 @Builder
 @Component
 @Table(name="STOCK")
-public class StockWrapper {
+public class StockEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

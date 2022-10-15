@@ -14,17 +14,18 @@ import java.math.BigDecimal;
 @Builder
 @Component
 public class Price {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private BigDecimal brutto;
     private BigDecimal stockPurchasePrice;
 
-    @OneToOne(orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name = "stock_wrapper_id")
-    private StockWrapper stockWrapper;
+    private StockEntity stock;
 
-    @OneToOne(orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name = "diller_id")
     private Diller diller;
 

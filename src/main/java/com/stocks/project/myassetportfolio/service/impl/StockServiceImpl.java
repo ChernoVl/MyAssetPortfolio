@@ -1,7 +1,7 @@
 package com.stocks.project.myassetportfolio.service.impl;
 
 import com.stocks.project.myassetportfolio.dataprovider.dto.StockDto;
-import com.stocks.project.myassetportfolio.model.entity.StockWrapper;
+import com.stocks.project.myassetportfolio.model.entity.StockEntity;
 import com.stocks.project.myassetportfolio.repository.StockRepository;
 import com.stocks.project.myassetportfolio.service.StockService;
 import lombok.RequiredArgsConstructor;
@@ -22,26 +22,26 @@ public class StockServiceImpl implements StockService {
     private final ModelMapper modelMapper;
 
     @Override
-    public List<StockWrapper> findAll() {
+    public List<StockEntity> findAll() {
         return stockRepository.findAll();
     }
 
     @Override
-    public Optional<StockWrapper> findById(Long id) {
+    public Optional<StockEntity> findById(Long id) {
         return stockRepository.findById(id);
     }
 
     @Override
-    public StockWrapper save(StockDto stockDto) {
-        StockWrapper stock = modelMapper.map(stockDto, StockWrapper.class);
+    public StockEntity save(StockDto stockDto) {
+        StockEntity stock = modelMapper.map(stockDto, StockEntity.class);
         return stockRepository.save(stock);
     }
 
     @Override
-    public Optional<StockWrapper> update(Long id, StockDto stockDto) {
+    public Optional<StockEntity> update(Long id, StockDto stockDto) {
         return stockRepository.findById(id)
                 .map(st -> {
-                   StockWrapper stock = modelMapper.map(stockDto, StockWrapper.class);
+                   StockEntity stock = modelMapper.map(stockDto, StockEntity.class);
                    stock.setId(id);
                    return stockRepository.save(stock);
                 });
