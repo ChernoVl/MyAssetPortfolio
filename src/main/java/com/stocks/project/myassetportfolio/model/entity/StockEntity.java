@@ -20,9 +20,8 @@ public class StockEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fullName;
-    private String ticker;
+    private String name;
+    private String symbol;
     private BigDecimal currPrice;
     private final Instant updatedDate = Instant.now();
-
 }
